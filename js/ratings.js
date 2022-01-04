@@ -22,11 +22,11 @@ const collect_ratings = () => {
     if(ratings.count !== 0) {
         ratings.average = (ratings.sum / ratings.count)
     }
-    document.querySelector('#average').value = ratings.average.toFixed(2)
     return ratings
 }
 
 document.addEventListener('change', (event) => {
-    collect_ratings()
+    const ratings = collect_ratings()
+    document.querySelector('#average').value = ratings.average.toFixed(2)
 })
 
